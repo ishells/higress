@@ -165,8 +165,8 @@ func NewAnnotationHandlerManager() AnnotationHandler {
 			match{},
 			headerControl{},
 			http2rpc{},
-                        // add log annotation
-                        log{},
+			// add log annotation
+			log{},
 		},
 		gatewayHandlers: []GatewayHandler{
 			downstreamTLS{},
