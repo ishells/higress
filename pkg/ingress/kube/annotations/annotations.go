@@ -77,6 +77,8 @@ type Ingress struct {
 	HeaderControl *HeaderControlConfig
 
 	Http2Rpc *Http2RpcConfig
+	// add for envoy access loggers
+	Log *log
 }
 
 func (i *Ingress) NeedRegexMatch(path string) bool {
@@ -165,7 +167,7 @@ func NewAnnotationHandlerManager() AnnotationHandler {
 			match{},
 			headerControl{},
 			http2rpc{},
-			// add log annotation
+			// add for envoy access loggers
 			log{},
 		},
 		gatewayHandlers: []GatewayHandler{
